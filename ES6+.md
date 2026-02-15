@@ -3121,7 +3121,21 @@ name 属性
 
 返回跟在 class 后的类名(存在时)。
 
-let Example\=class Exam { constructor(a) { this.a = a; } } console.log(Example.name); let Example\=class { constructor(a) { this.a = a; } } console.log(Example.name);
+```
+let Example=class Exam {
+    constructor(a) {
+        this.a = a;
+    }
+}
+console.log(Example.name); // Exam
+ 
+let Example=class {
+    constructor(a) {
+        this.a = a;
+    }
+}
+console.log(Example.name); // Example
+```
 
 **方法**
 
@@ -3233,4 +3247,4 @@ class Child2 extends Father { constructor(){ super(); console.log(super.test());
 
 不可继承常规对象。
 
-var Father = { } class Child extends Father { } Object.setPrototypeOf(Child.prototype, Father);
+var Father = { } class Child extends Father { } Object.setPrototypeOf(Child.prototype, Father);	
